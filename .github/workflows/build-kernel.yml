@@ -25,6 +25,7 @@ jobs:
           
       - name: Pull kernel source
         run: |
+          sudo apt update -y && sudo apt upgrade -y && sudo apt install python2 -y
           git clone --depth=1 ${{ env.KERNEL_SOURCE }} -b ${{ env.KERNEL_SOURCE_BRANCH }} kernel-source
 
       - name: Build kernel
